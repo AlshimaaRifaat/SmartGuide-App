@@ -69,11 +69,11 @@
     <string name="save">حفظ</string>
     <string name="Send">ارسال</string>
     <string name="PauseTrip">تعليق الطلب</string>
-    <string name="finish_trip">انهاء الرحلة</string>
+    <string name="finish_trip">إلغاء الرحلة</string>
     <string name="title_activity_navigation_guide">NavigationGuideActivity</string>
     <string name="title_activity_navigation_driver">NavigationDriverActivity</string>
     <string name="title_activity_navigation_member">NavigationMemberActivity</string>
     <string name="nextTrip">الرحله القادمه</string>
     <string name="delivering_done">تم استلام الحجاج بنجاح</string>
-    <string name="checkNetworkConnection">افحص اتصالك بالانترنت!</string>
+    <string name="checkNetworkConnection">تأكد من اتصالك بالانترنت!</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.alshimaa.smartguide.adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -24,7 +25,8 @@ public class FollowFlightsAdapter extends RecyclerView.Adapter<FollowFlightsAdap
 
    DetailsFollowFlightsView detailsFollowFlightsView;
 
-
+   /* SharedPreferences sharedPreferences_status;
+    String TripStatus_follow_flight;*/
     public FollowFlightsAdapter(Context context, List<FollowFlightsData> followFlightsDataList) {
         this.context = context;
         this.followFlightsDataList = followFlightsDataList;
@@ -45,6 +47,9 @@ public class FollowFlightsAdapter extends RecyclerView.Adapter<FollowFlightsAdap
        /* Glide.with( context ).load( "http://omelqoura.com"
                 +followFlightsDataList.get( position ).getImg() ).into(holder.imageView);*/
         holder.path.setText("( "+followFlightsDataList.get( position ).getFrom()+" – "+followFlightsDataList.get( position ).getTo()+" )");
+      /*  sharedPreferences_status=context.getSharedPreferences("status", Context.MODE_PRIVATE);
+        TripStatus_follow_flight=sharedPreferences_status.getString("trip_status",null);*/
+
         holder.status.setText(followFlightsDataList.get( position ).getStatus());
         // Typeface customFontBold = Typeface.createFromAsset( context.getAssets(), "DroidKufi-Bold.ttf" );
        /* holder.address.setText(currentExhibtionDataList.get( position ).getAddress());*/

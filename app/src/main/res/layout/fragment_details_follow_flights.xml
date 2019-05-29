@@ -233,7 +233,7 @@
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_32sdp"
             android:background="@drawable/btn_register"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_50sdp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/_32sdp"
             android:textSize="@dimen/_13sdp"
@@ -242,6 +242,7 @@
             android:textAllCaps="false"
             android:layout_marginBottom="@dimen/_11sdp"
             android:visibility="gone"
+
 
             />
        <!-- <Button
@@ -266,8 +267,7 @@
             android:layout_height="@dimen/_32sdp"
             android:background="@drawable/btn_register"
             android:layout_marginTop="@dimen/_10sdp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="@dimen/_32sdp"
+            android:layout_centerHorizontal="true"
             android:textSize="@dimen/_13sdp"
             android:textColor="#fff"
             android:text="@string/ViewPath"
@@ -281,16 +281,16 @@
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_32sdp"
                 android:background="@drawable/btn_register"
-                android:layout_marginTop="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_50sdp"
                 android:layout_marginLeft="@dimen/_32sdp"
                 android:textSize="@dimen/_13sdp"
                 android:textColor="#fff"
                 android:text="@string/request_suspension"
                 android:textAllCaps="false"
-                android:layout_below="@id/details_follow_flights_btn_view_on_map"
                 android:layout_marginBottom="@dimen/_4sdp"
                 android:clickable="true"
                 android:visibility="gone"
+
 
                />
             <Button
@@ -298,14 +298,14 @@
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_32sdp"
                 android:background="@drawable/btn_register"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_50sdp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="@dimen/_32sdp"
                 android:textSize="@dimen/_13sdp"
                 android:textColor="#fff"
                 android:text="@string/finish_trip"
-               android:visibility="gone"
                 android:clickable="true"
+                android:visibility="gone"
 
               />
         </RelativeLayout>

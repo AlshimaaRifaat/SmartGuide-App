@@ -55,6 +55,8 @@ TextView flightNameTxt,guideNameTxt,busNumberTxt,driverNameTxt
 
     StartTripPresenter startTripPresenter;
 
+   /* SharedPreferences.Editor sharedPref_status;*/
+
 
     public DetailsFollowFlightsFragment() {
         // Required empty public constructor
@@ -101,7 +103,7 @@ View view;
             EndDate=followFlightsData.getDateEnd();
             endDateTxt.setText("تاريخ نهايه الرحله:"+EndDate);
 
-            logoBusNumberTxt.setText(BusName);
+            logoBusNumberTxt.setText("( "+followFlightsData.getFrom()+" – "+followFlightsData.getTo()+" )");
           // TripStatus=followFlightsData.getStatus();
 
 
@@ -235,6 +237,9 @@ View view;
                 startTripBtn.setVisibility(View.INVISIBLE);
                 pauseTripBtn.setVisibility(View.INVISIBLE);
                 performEndTrip();
+               /* sharedPref_status=getContext().getSharedPreferences("status", Context.MODE_PRIVATE).edit();
+                sharedPref_status.putString("trip_status", "ملغية");
+                sharedPref_status.apply();*/
             }
         });
         pauseTripBtn.setOnClickListener(new View.OnClickListener() {

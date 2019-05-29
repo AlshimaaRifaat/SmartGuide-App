@@ -64,11 +64,13 @@ Toolbar toolbar;
     NetworkConnection networkConnection;
 
     Bundle bundle;
-    String Mosnda,Kayd_tnfez,Moalaq,Malghia,
-            Mokfl_nhaey,Mokfl_gozey,Mogdwla,Old,New;
+    public  static String Mosnda,Kayd_tnfez,Moalaq,Malghia,
+            Mokfl_nhaey,Mokfl_gozey,Mogdwla,Old,New,TripStatus_follow_flight;
     SharedPreferences.Editor sharedPref_status;
 
     NotificationsPresenter notificationsPresenter;
+
+    /*SharedPreferences sharedPreferences_status;*/
 
     //List<FollowFlightsData> listAfterRemoveItems=new ArrayList<>() ;
 
@@ -84,6 +86,9 @@ View view;
         view =inflater.inflate(R.layout.fragment_follow_flights, container, false);
         unbinder= ButterKnife.bind(this,view);
         init();
+        /*sharedPreferences_status=getContext().getSharedPreferences("status", Context.MODE_PRIVATE);
+        TripStatus_follow_flight=sharedPreferences_status.getString("trip_status",null);
+        Toast.makeText(getContext(), TripStatus_follow_flight, Toast.LENGTH_SHORT).show()*/;
         notificationsPresenter=new NotificationsPresenter(getContext(),this);
         notificationsPresenter.getNotificationsResult(SplashActivity.Login, "supervisors");
             // TODO: Add OneSignal initialization here
