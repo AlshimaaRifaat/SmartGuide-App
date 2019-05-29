@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fcf9f9"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    tools:context=".fragment.LoginFragment">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <!-- TODO: Update blank fragment layout -->
+<ImageView
+    android:layout_width="@dimen/_160sdp"
+    android:layout_height="@dimen/_110sdp"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/logo3"
+    android:layout_marginTop="@dimen/_27sdp"/>
+    <TextView
+        android:id="@+id/login_text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Welcome_to_the_program_guide_smart_to_serve_pilgrims"
+        android:textColor="#4175a3"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_147sdp"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_14sdp"
+        />
+    <android.support.v7.widget.CardView
+        android:id="@+id/login_cardV_user_name"
+        android:layout_below="@+id/login_text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_17sdp"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_14sdp"
+        app:cardCornerRadius="@dimen/_18sdp"
+        app:cardBackgroundColor="#fff"
+        app:cardElevation="@dimen/_5sdp"
+        >
+        <EditText
+            android:id="@+id/login_Etext_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Email"
+            android:textColorHint="#bababa"
+            android:textColor="#bababa"
+            android:paddingStart="@dimen/_13sdp"
+            android:paddingEnd="@dimen/_13sdp"
+            android:textSize="@dimen/_13sdp"
+            android:backgroundTint="#fff"
+            android:maxLines="1"
+            android:inputType="textEmailAddress"
+
+
+            />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/login_cardV_password"
+        android:layout_below="@+id/login_cardV_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_17sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_14sdp"
+        app:cardCornerRadius="@dimen/_18sdp"
+        app:cardBackgroundColor="#fff"
+        app:cardElevation="@dimen/_5sdp"
+        >
+        <EditText
+            android:id="@+id/login_Etext_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Password"
+            android:textColorHint="#bababa"
+            android:textColor="#bababa"
+            android:paddingEnd="@dimen/_14sdp"
+            android:paddingStart="@dimen/_14sdp"
+            android:textSize="@dimen/_13sdp"
+            android:backgroundTint="#fff"
+            android:maxLines="1"
+            app:passwordToggleEnabled="true"
+            android:gravity="right"
+            android:inputType="textPassword"
+
+
+
+            />
+    </android.support.v7.widget.CardView>
+    <!--<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_text_input_layout"
+        android:layout_below="@+id/login_cardV_user_name"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="#fff"
+        >
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/path3762"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:id="@+id/pass_img"
+            android:layout_centerVertical="true"/>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            android:layout_toRightOf="@id/pass_img"
+            android:hint="كلمة المرور"
+            >
+
+            <EditText
+                android:id="@+id/login_Etext_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="#bababa"
+                />
+        </android.support.design.widget.TextInputLayout>
+    </RelativeLayout>
+-->
+    <Button
+        android:id="@+id/login_btn_register"
+        android:layout_width="@dimen/_72sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:background="@drawable/btn_register"
+        android:layout_marginTop="@dimen/_35sdp"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/_13sdp"
+        android:textColor="#fff"
+        android:text="@string/Register"
+        android:textAllCaps="false"
+        android:layout_below="@id/login_cardV_password"
+        android:layout_marginBottom="@dimen/_32sdp"
+        android:clickable="true"
+        />
+</RelativeLayout>
+</ScrollView>
