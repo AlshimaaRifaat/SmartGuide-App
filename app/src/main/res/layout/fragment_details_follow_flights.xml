@@ -306,6 +306,7 @@
                 android:text="@string/finish_trip"
                 android:clickable="true"
                 android:visibility="gone"
+                android:layout_marginBottom="@dimen/_11sdp"
 
               />
         </RelativeLayout>
