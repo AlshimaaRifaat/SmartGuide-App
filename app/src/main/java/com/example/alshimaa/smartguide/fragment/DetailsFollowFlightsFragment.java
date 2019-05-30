@@ -143,8 +143,10 @@ View view;
 
         }
        // swipeRefreshLayout.setRefreshing( false );
+
         if(StatusId.equals("1"))
         {
+
             startTripBtn.setVisibility(View.VISIBLE);
             viewOnMapBtn.setVisibility(View.VISIBLE);
 
@@ -178,6 +180,32 @@ View view;
         {
             viewOnMapBtn.setVisibility(View.VISIBLE);
             startTripBtn.setVisibility(View.VISIBLE);
+        }else
+        {
+            if(TripStatus.equals("معلق"))
+            {
+                startTripBtn.setVisibility(View.VISIBLE);
+                viewOnMapBtn.setVisibility(View.VISIBLE);
+
+                finishTripBtn.setVisibility(View.GONE);
+                pauseTripBtn.setVisibility(View.GONE);
+
+            }else if(TripStatus.equals("ملغيه"))
+            {
+                viewOnMapBtn.setVisibility(View.VISIBLE);
+
+                startTripBtn.setVisibility(View.GONE);
+                finishTripBtn.setVisibility(View.GONE);
+                pauseTripBtn.setVisibility(View.GONE);
+            }else if (TripStatus.equals("قيد التنفيذ"))
+            {
+                finishTripBtn.setVisibility(View.VISIBLE);
+                viewOnMapBtn.setVisibility(View.VISIBLE);
+                pauseTripBtn.setVisibility(View.VISIBLE);
+
+                startTripBtn.setVisibility(View.GONE);
+
+            }
         }
         /*if(TripStatus.equals("مسنده"))
         {
