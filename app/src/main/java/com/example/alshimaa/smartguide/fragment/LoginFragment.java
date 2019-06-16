@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.alshimaa.smartguide.NetworkConnection;
 import com.example.alshimaa.smartguide.R;
+import com.example.alshimaa.smartguide.SharedPrefManager;
 import com.example.alshimaa.smartguide.SplashActivity;
 import com.example.alshimaa.smartguide.activity.NavigationActivity;
 import com.example.alshimaa.smartguide.activity.NavigationDriverActivity;
@@ -24,14 +25,16 @@ import com.example.alshimaa.smartguide.activity.NavigationGuideActivity;
 import com.example.alshimaa.smartguide.activity.NavigationMemberActivity;
 import com.example.alshimaa.smartguide.model.LoginData;
 import com.example.alshimaa.smartguide.presenter.LoginPresenter;
-import com.example.alshimaa.smartguide.view.DetailsNavHeaderProfileView;
+import com.example.alshimaa.smartguide.presenter.TokensPresenter;
 import com.example.alshimaa.smartguide.view.LoginView;
+import com.example.alshimaa.smartguide.view.TokensView;
 import com.fourhcode.forhutils.FUtilsValidation;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LoginFragment extends Fragment implements LoginView{
+
+public class LoginFragment extends Fragment implements LoginView,TokensView{
     Button loginBtn;
     EditText userEmail,userPassword;
     LoginPresenter loginPresenter;
@@ -44,6 +47,7 @@ public class LoginFragment extends Fragment implements LoginView{
     SharedPreferences.Editor sharedPref_Name;
     SharedPreferences.Editor sharedPref_Phone;
     SharedPreferences.Editor sharedPref_Img;
+    TokensPresenter tokensPresenter;
     public LoginFragment() {
         // Required empty public constructor
     }
@@ -55,6 +59,7 @@ View view;
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_login, container, false);
         init();
+        String token = SharedPrefManager.getInstance(getContext()).getDeviceToken();
         sharedPref=getContext().getSharedPreferences("default", Context.MODE_PRIVATE).edit();
         sharedPref_company_id=getContext().getSharedPreferences("def", Context.MODE_PRIVATE).edit();
 
@@ -135,6 +140,8 @@ View view;
         loginBtn=view.findViewById(R.id.login_btn_register);
         userEmail=view.findViewById(R.id.login_Etext_email);
         userPassword=view.findViewById(R.id.login_Etext_password);
+
+       // tokensPresenter=new TokensPresenter(getContext(),this);
     }
 
 
@@ -180,7 +187,8 @@ View view;
             sharedPref_Img.putString("img", loginData.getImage());
             sharedPref_Img.apply();
 
-
+            /*String token= SharedPrefManager.getInstance(getContext()).getDeviceToken();
+            tokensPresenter.UpdateToken(token,SplashActivity.Login);*/
             Intent i = new Intent(getActivity(), NavigationActivity.class);
         /*i.putExtra("img",loginData.getImage());
 
@@ -232,6 +240,16 @@ View view;
 
     @Override
     public void showError() {
+
+    }
+
+    @Override
+    public void success() {
+
+    }
+
+    @Override
+    public void Error() {
 
     }
 

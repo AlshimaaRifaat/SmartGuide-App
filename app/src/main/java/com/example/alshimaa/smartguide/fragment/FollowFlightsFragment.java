@@ -32,7 +32,7 @@ import com.example.alshimaa.smartguide.view.DetailsFollowFlightsView;
 import com.example.alshimaa.smartguide.view.FollowFlightsView;
 import com.example.alshimaa.smartguide.view.NotificationNumbersView;
 import com.example.alshimaa.smartguide.view.NotificationsView;
-import com.onesignal.OneSignal;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -92,10 +92,10 @@ View view;
         notificationsPresenter=new NotificationsPresenter(getContext(),this);
         notificationsPresenter.getNotificationsResult(SplashActivity.Login, "supervisors");
             // TODO: Add OneSignal initialization here
-            OneSignal.startInit(getContext())
+           /* OneSignal.startInit(getContext())
                     .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
                     .unsubscribeWhenNotificationsAreDisabled(true)
-                    .init();
+                    .init();*/
 
         sharedPref_status=getContext().getSharedPreferences("status", Context.MODE_PRIVATE).edit();
         followFlightsPresenter=new FollowFlightsPresenter(getContext(),this);

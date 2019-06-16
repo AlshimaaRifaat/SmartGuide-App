@@ -35,6 +35,15 @@
             android:label="@string/title_activity_navigation"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
+        <service android:name="com.example.alshimaa.smartguide.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDHnVZKX8_g_nfKP67LgPTEs2U3P_j-1Ik" />

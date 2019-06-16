@@ -2,7 +2,6 @@ package com.example.alshimaa.smartguide.model;
 
 import android.app.Application;
 
-import com.onesignal.OneSignal;
 
 public class OneSignalClass extends Application {
    /* @Override
