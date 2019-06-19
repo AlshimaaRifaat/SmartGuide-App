@@ -10,7 +10,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Client {
-    public static String baseUrl="http://omelqoura.com/public/api/";
+    public static String baseUrl="http://omelqoura.com/api/";
     public  static Retrofit retrofit = null;
 
     public static Retrofit getClient() {

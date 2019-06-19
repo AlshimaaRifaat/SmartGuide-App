@@ -30,7 +30,7 @@ public class MyNotification {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    public void showSmallNotification(String title, String message, String address, String time, String day, Intent intent) {
+    public void showSmallNotification(String title, String message, Intent intent) {
 
 
         PendingIntent resultPendingIntent =
@@ -44,9 +44,7 @@ public class MyNotification {
 
         Notification.Builder mBuilder = new Notification.Builder(mCtx);
         mBuilder.setStyle(new Notification.InboxStyle()
-                .addLine(message)
-                .addLine(address)
-                .addLine("Time    "+time+"     "+"Day     "+day));
+                .addLine(message));
         notification = mBuilder.setTicker(title)
                 .setContentIntent(resultPendingIntent)
                 .setContentTitle(title)

@@ -1,6 +1,6 @@
 package com.example.alshimaa.smartguide.view;
 
-public interface TokensView {
+public interface GetFirebaseNotificationTokenView {
     void success();
     void Error();
 }

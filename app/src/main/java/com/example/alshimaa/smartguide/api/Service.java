@@ -7,6 +7,7 @@ import com.example.alshimaa.smartguide.model.EndTripGuideResponse;
 import com.example.alshimaa.smartguide.model.FollowFlightsResponse;
 import com.example.alshimaa.smartguide.model.GetBusNumberResponse;
 import com.example.alshimaa.smartguide.model.GetDriverNameResponse;
+import com.example.alshimaa.smartguide.model.GetFirebaseNotificationTokenResponse;
 import com.example.alshimaa.smartguide.model.GetGuideNameResponse;
 import com.example.alshimaa.smartguide.model.GetMemeberNameResponse;
 import com.example.alshimaa.smartguide.model.GetPathResponse;
@@ -116,4 +117,7 @@ public interface Service {
 
     @POST("endTripSupervisor")
     Call<StartTripResponse> getendTripSupervisorData(@Body Map<String,String> map);
+
+    @POST("getFirebaseToken")
+    Call<GetFirebaseNotificationTokenResponse> getFirebaseToken(@Body Map<String,String> map);
 }
