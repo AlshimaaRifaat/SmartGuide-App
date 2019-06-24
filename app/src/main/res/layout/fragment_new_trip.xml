@@ -76,7 +76,7 @@
             android:background="#154677"
             android:textColor="#fff"
             android:layout_alignParentStart="true"
-            android:text="@string/NewTrip"
+            android:text="رحله مجدوله"
             android:textSize="@dimen/_13sdp"
             android:textStyle="bold"/>
        <Button
@@ -85,7 +85,7 @@
            android:layout_height="wrap_content"
            android:layout_toRightOf="@+id/new_trip_btn_new_trip"
            android:textColor="#154677"
-           android:text="@string/ImmediateTrip"
+           android:text="امر تحميل فوري"
            android:background="#fff"/>
 </RelativeLayout>
 

@@ -129,9 +129,10 @@ public class NewTripFragment extends Fragment implements GetGuideNameView,GetBus
 
 
     String[] statusValueSpinner = {
-            "مسندة",
-            "مجدولة",
-            "فوريه"
+            "مسندة"
+    };
+    String[] statusValueSpinnerMgdwla = {
+            "مجدوله"
     };
    /* List<String> SpinnerValueList = new ArrayList<>();
         SpinnerValueList.add("Item 1");
@@ -184,8 +185,9 @@ View view;
         BusNumber();
         driverName();
         PathFromTo();
-        TripStatus();
+       // TripStatus();
        // MemberName();
+        TripStatusMgdwla();
 
         mSimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm", Locale.getDefault());
 
@@ -213,12 +215,7 @@ View view;
             }, currentDate.get(Calendar.YEAR), currentDate.get(Calendar.MONTH), currentDate.get(Calendar.DATE)).show();
         }*/
 
-        addTripBtn.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                PerformAddingTrip();
-            }
-        } );
+
 
        /* immediateTripBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -252,6 +249,15 @@ View view;
         return view;
     }
 
+    private void clickAddTrip() {
+        addTripBtn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PerformAddingTrip();
+            }
+        } );
+    }
+
     private void chooseType() {
         btnImmediateTrip.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -261,7 +267,8 @@ View view;
                 btnImmediateTrip.setTextColor(Color.rgb(240, 245, 251));
                 btnMgdwlaTrip.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.btn_white));
                 btnMgdwlaTrip.setTextColor(Color.rgb(  54,121,201));
-
+                TripStatus();
+                clickAddTrip();
               //  reservation_presenter.reservation(String.valueOf(PAGE),Clintid,Lang,Type);
             }
         });
@@ -273,7 +280,57 @@ View view;
                 btnMgdwlaTrip.setTextColor(Color.rgb(240, 245, 251));
                 btnImmediateTrip.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.btn_white));
                 btnImmediateTrip.setTextColor(Color.rgb(  54,121,201));
+                TripStatusMgdwla();
+                clickAddTrip();
+
                // reservation_presenter.reservation(String.valueOf(PAGE),Clintid,Lang,Type);
+            }
+        });
+    }
+
+    private void TripStatusMgdwla() {
+        StatusSpinnerAdapter statusSpinnerAdapter = new StatusSpinnerAdapter(getContext(), R.layout.guide_name_spinner_item);
+
+       /* for (int i=0;i<SpinnerValueList.size();i++)
+        {
+            SelectedItemSpinner=SpinnerValueList.get(i);
+        }*/
+        statusSpinnerAdapter.addAll(statusValueSpinnerMgdwla);
+        statusSpinnerAdapter.add("حالة الرحله");
+        statusSpinner.setAdapter(statusSpinnerAdapter);
+        statusSpinner.setPrompt("حالة الرحله");
+
+        statusSpinner.setSelection(statusSpinnerAdapter.getCount());
+
+        statusSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                // TODO Auto-generated method stub
+
+                if(statusSpinner.getSelectedItem() == "حالة الرحله")
+                {
+
+                    //Do nothing.
+                }
+                else{
+
+                    //  SpinnerValue=reasonSpinner.getSelectedItem();
+                    statusSelectedItemSpinner=statusSpinner.getSelectedItem().toString();
+
+                    /*callUsPresenter.getCallUsResult( userNameEtext.getText().toString(),
+                            userEmailEtext.getText().toString(),userPhoneEtext.getText().toString()
+                            ,userMsgEtext.getText().toString(),SelectedItemSpinner);*/
+                    //  Toast.makeText(getContext(), statusSelectedItemSpinner, Toast.LENGTH_SHORT).show();
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+
             }
         });
     }
@@ -429,12 +486,12 @@ View view;
                                 , String.valueOf(BusNumberModelID), startDateTxt.getText().toString(), endDateTxt.getText().toString()
                                 , String.valueOf(PathModelID), CompanyId, SplashActivity.Login, String.valueOf(Price), "7");
                     }
-                    else if (statusSelectedItemSpinner=="فوريه") {
+                 /*   else if (statusSelectedItemSpinner=="فوريه") {
                         addTripPresenter.getAddTripResult(tripLatinName.getText().toString(),
                                 tripArabicName.getText().toString(), String.valueOf(GuideNameModelID), String.valueOf(DriverNameModelID)
                                 , String.valueOf(BusNumberModelID), startDateTxt.getText().toString(), endDateTxt.getText().toString()
                                 , String.valueOf(PathModelID), CompanyId, SplashActivity.Login, String.valueOf(Price), "10");
-                    }
+                    }*/
                     // still not done
                 }else
                 {

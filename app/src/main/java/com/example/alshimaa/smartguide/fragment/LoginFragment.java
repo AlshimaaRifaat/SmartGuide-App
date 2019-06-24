@@ -169,8 +169,7 @@ View view;
             sharedPref_Img.apply();
 
             FirebaseToken= SharedPrefManager.getInstance(getContext()).getDeviceToken();
-            Toast.makeText(getContext(),"firebase" +FirebaseToken, Toast.LENGTH_SHORT).show();
-            Toast.makeText(getContext(),"firebase" +loginData.getUserToken(), Toast.LENGTH_SHORT).show();
+          
             getFirebaseNotificationTokenPresenter.UpdateToken(loginData.getUserToken(),FirebaseToken,"android","guides");
 
             Intent i = new Intent(getActivity(), NavigationGuideActivity.class);
@@ -196,8 +195,7 @@ View view;
             sharedPref_Img.apply();
 
             FirebaseToken= SharedPrefManager.getInstance(getContext()).getDeviceToken();
-            Toast.makeText(getContext(),"firebase" +FirebaseToken, Toast.LENGTH_SHORT).show();
-            Toast.makeText(getContext(),"firebase" +SplashActivity.Login, Toast.LENGTH_SHORT).show();
+
             getFirebaseNotificationTokenPresenter.UpdateToken(SplashActivity.Login,FirebaseToken,"android","supervisors");
             Intent i = new Intent(getActivity(), NavigationActivity.class);
         /*i.putExtra("img",loginData.getImage());
@@ -221,8 +219,7 @@ View view;
                 sharedPref_Img.apply();
 
             FirebaseToken= SharedPrefManager.getInstance(getContext()).getDeviceToken();
-            Toast.makeText(getContext(),"firebase" +FirebaseToken, Toast.LENGTH_SHORT).show();
-            Toast.makeText(getContext(),"firebase" +loginData.getUserToken(), Toast.LENGTH_SHORT).show();
+
             getFirebaseNotificationTokenPresenter.UpdateToken(loginData.getUserToken(),FirebaseToken,"android","drivers");
                 Intent i = new Intent(getActivity(), NavigationDriverActivity.class);
                 startActivity(i);
@@ -244,8 +241,7 @@ View view;
             sharedPref_Img.apply();
 
             FirebaseToken= SharedPrefManager.getInstance(getContext()).getDeviceToken();
-            Toast.makeText(getContext(),"firebase" +FirebaseToken, Toast.LENGTH_SHORT).show();
-            Toast.makeText(getContext(),"firebase" +loginData.getUserToken(), Toast.LENGTH_SHORT).show();
+
             getFirebaseNotificationTokenPresenter.UpdateToken(loginData.getUserToken(),FirebaseToken,"android","members");
             Intent i = new Intent(getActivity(), NavigationMemberActivity.class);
             startActivity(i);
