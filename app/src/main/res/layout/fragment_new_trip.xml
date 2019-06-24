@@ -61,7 +61,6 @@
                 android:textSize="@dimen/_14sdp"/>
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
-<!--
 <RelativeLayout
     android:id="@+id/relative_btns"
     android:layout_width="@dimen/_180sdp"
@@ -89,14 +88,14 @@
            android:text="@string/ImmediateTrip"
            android:background="#fff"/>
 </RelativeLayout>
--->
+
 
     <android.support.v7.widget.CardView
         android:id="@+id/new_trip_cardV_trip_arabic_name"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_37sdp"
-        android:layout_below="@+id/new_trip_tool_bar"
-        android:layout_marginTop="@dimen/_37sdp"
+        android:layout_below="@+id/relative_btns"
+        android:layout_marginTop="@dimen/_17sdp"
         android:layout_marginStart="@dimen/_14sdp"
         android:layout_marginEnd="@dimen/_14sdp"
         app:cardCornerRadius="@dimen/_18sdp"
@@ -116,6 +115,7 @@
             android:textSize="@dimen/_13sdp"
             android:backgroundTint="#fff"
             android:inputType="text"
+
 
 
             />

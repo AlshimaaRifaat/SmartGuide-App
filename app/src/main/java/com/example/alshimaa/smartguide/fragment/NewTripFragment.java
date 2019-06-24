@@ -5,8 +5,10 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
@@ -101,6 +103,9 @@ public class NewTripFragment extends Fragment implements GetGuideNameView,GetBus
     Toolbar toolbar;
     @BindView(R.id.new_trip_Etext_trip_arabic_name)EditText tripArabicName;
     @BindView(R.id.new_trip_Etext_trip_Latin_name)EditText tripLatinName;
+    @BindView(R.id.new_trip_btn_immediate_trip)Button btnImmediateTrip;
+    @BindView(R.id.new_trip_btn_new_trip)Button btnMgdwlaTrip;
+
 
     Context context;
     Button addTripBtn;
@@ -173,6 +178,8 @@ View view;
             }
         });
         networkConnection=new NetworkConnection( getContext() );
+        
+        chooseType();
         GuideName();
         BusNumber();
         driverName();
@@ -243,6 +250,32 @@ View view;
 
 
         return view;
+    }
+
+    private void chooseType() {
+        btnImmediateTrip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                btnImmediateTrip.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.btn_blue));
+                btnImmediateTrip.setTextColor(Color.rgb(240, 245, 251));
+                btnMgdwlaTrip.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.btn_white));
+                btnMgdwlaTrip.setTextColor(Color.rgb(  54,121,201));
+
+              //  reservation_presenter.reservation(String.valueOf(PAGE),Clintid,Lang,Type);
+            }
+        });
+        btnMgdwlaTrip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                btnMgdwlaTrip.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.btn_blue));
+                btnMgdwlaTrip.setTextColor(Color.rgb(240, 245, 251));
+                btnImmediateTrip.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.btn_white));
+                btnImmediateTrip.setTextColor(Color.rgb(  54,121,201));
+               // reservation_presenter.reservation(String.valueOf(PAGE),Clintid,Lang,Type);
+            }
+        });
     }
 
     private void TripStatus() {
