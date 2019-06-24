@@ -187,6 +187,7 @@ View view;
         PathFromTo();
        // TripStatus();
        // MemberName();
+
         TripStatusMgdwla();
 
         mSimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm", Locale.getDefault());
