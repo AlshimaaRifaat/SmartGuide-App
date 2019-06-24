@@ -168,6 +168,11 @@ View view;
             sharedPref_Img.putString("img", loginData.getImage());
             sharedPref_Img.apply();
 
+            FirebaseToken= SharedPrefManager.getInstance(getContext()).getDeviceToken();
+            Toast.makeText(getContext(),"firebase" +FirebaseToken, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(),"firebase" +loginData.getUserToken(), Toast.LENGTH_SHORT).show();
+            getFirebaseNotificationTokenPresenter.UpdateToken(loginData.getUserToken(),FirebaseToken,"android","guides");
+
             Intent i = new Intent(getActivity(), NavigationGuideActivity.class);
             startActivity(i);
             ((Activity) getActivity()).overridePendingTransition(0,0);
@@ -215,6 +220,10 @@ View view;
                 sharedPref_Img.putString("img", loginData.getImage());
                 sharedPref_Img.apply();
 
+            FirebaseToken= SharedPrefManager.getInstance(getContext()).getDeviceToken();
+            Toast.makeText(getContext(),"firebase" +FirebaseToken, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(),"firebase" +loginData.getUserToken(), Toast.LENGTH_SHORT).show();
+            getFirebaseNotificationTokenPresenter.UpdateToken(loginData.getUserToken(),FirebaseToken,"android","drivers");
                 Intent i = new Intent(getActivity(), NavigationDriverActivity.class);
                 startActivity(i);
                 ((Activity) getActivity()).overridePendingTransition(0,0);
@@ -234,6 +243,10 @@ View view;
             sharedPref_Img.putString("img", loginData.getImage());
             sharedPref_Img.apply();
 
+            FirebaseToken= SharedPrefManager.getInstance(getContext()).getDeviceToken();
+            Toast.makeText(getContext(),"firebase" +FirebaseToken, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(),"firebase" +loginData.getUserToken(), Toast.LENGTH_SHORT).show();
+            getFirebaseNotificationTokenPresenter.UpdateToken(loginData.getUserToken(),FirebaseToken,"android","members");
             Intent i = new Intent(getActivity(), NavigationMemberActivity.class);
             startActivity(i);
             ((Activity) getActivity()).overridePendingTransition(0,0);
